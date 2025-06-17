@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,7 +10,6 @@ public class Game_Manager : MonoBehaviour
 
     private float timer = 0f;
     private bool isRunning = false;
-
     public float gameTime = 30f;
 
     void Update()
