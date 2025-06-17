@@ -10,7 +10,8 @@ public class RingTriggerZone : MonoBehaviour
     {
         if (other.CompareTag("Ring"))
         {
-            // 링이 통과했을 때만 점수 올리기
+            var ring = other.GetComponent<RingRespawner>();
+            if (ring != null) ring.Respawn();
             gameManager.OnRingScored();
         }
     }

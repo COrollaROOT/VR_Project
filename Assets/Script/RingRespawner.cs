@@ -5,13 +5,22 @@ using UnityEngine;
 public class RingRespawner : MonoBehaviour
 {
     private Vector3 startPos;
+    private Quaternion startRot;
+    private Rigidbody rb;
 
-    void Start() => startPos = transform.position;
+    void Start()
+    {
+        startPos = transform.position;
+        startRot = transform.rotation;
+        rb = GetComponent<Rigidbody>();
+    }
 
     public void Respawn()
     {
-        transform.position = startPos;
-        GetComponent<Rigidbody>().velocity = Vector3.zero;
-        GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+        rb.MovePosition(startPos);
+        rb.MoveRotation(startRot);
     }
 }
+

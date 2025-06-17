@@ -11,9 +11,16 @@ public class GameManager : MonoBehaviour
 
     public int score = 0;
 
+    void Start() => UpdateScoreText();
+
     public void OnRingScored()
     {
         score++;
+        UpdateScoreText();
+    }
+
+    void UpdateScoreText()
+    {
         scoreText.text = "Score: " + score;
     }
 }
