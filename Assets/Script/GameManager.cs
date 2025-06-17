@@ -13,9 +13,9 @@ public class GameManager : MonoBehaviour
 
     void Start() => UpdateScoreText();
 
-    public void OnRingScored()
+    public void OnRingScored(int amount)
     {
-        score++;
+        score += amount;
         UpdateScoreText();
     }
 
